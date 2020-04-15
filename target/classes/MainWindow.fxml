@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.media.MediaView?>
+<?import javafx.geometry.Insets?>
+<GridPane alignment="CENTER" hgap="10" minHeight="600.0" minWidth="900.0" style="-fx-grid-lines-visible: true;" styleClass="main-window" stylesheets="stylesheet.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <rowConstraints>
+        <RowConstraints percentHeight="80" />
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="10" />
+    </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <children>
+      <MediaView GridPane.rowIndex="0" GridPane.rowSpan="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" ></MediaView>
+       <Slider translateY="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="1"
+               minWidth="750">
+           <padding>
+               <Insets bottom="5" left="30" right="30" top="0"></Insets>
+           </padding>
+       </Slider>
+       <HBox GridPane.rowIndex="2" GridPane.rowSpan="1" alignment="CENTER" spacing="10">
+           <children>
+               <Button>BB</Button>
+               <Button>B</Button>
+               <Button>p</Button>
+               <Button>S</Button>
+               <Button>P</Button>
+               <Button>FF</Button>
+           </children>
+       </HBox>
+
+   </children>
+</GridPane>
