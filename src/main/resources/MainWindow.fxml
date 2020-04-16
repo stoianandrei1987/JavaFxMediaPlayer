@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
 
-<?import javafx.scene.media.MediaView?>
-<?import javafx.geometry.Insets?>
-<GridPane alignment="CENTER" hgap="10" minHeight="600.0" minWidth="900.0" style="-fx-grid-lines-visible: true;" styleClass="main-window" stylesheets="stylesheet.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
-    <rowConstraints>
-        <RowConstraints percentHeight="80" />
-        <RowConstraints percentHeight="10" />
-        <RowConstraints percentHeight="10" />
-    </rowConstraints>
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <children>
-      <MediaView GridPane.rowIndex="0" GridPane.rowSpan="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" ></MediaView>
-       <Slider translateY="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="1"
-               minWidth="750" fx:id="slider">
-           <padding>
-               <Insets bottom="5" left="30" right="30" top="0"></Insets>
-           </padding>
-       </Slider>
-       <HBox GridPane.rowIndex="2" GridPane.rowSpan="1" alignment="CENTER" spacing="10">
-           <children>
-               <Button fx:id="previousBtn">BB</Button>
-               <Button fx:id="rewindBtn">B</Button>
-               <Button fx:id="pauseBtn">p</Button>
-               <Button fx:id="stopBtn">S</Button>
-               <Button fx:id="playBtn">P</Button>
-               <Button fx:id="fastForward">FF</Button>
-           </children>
-       </HBox>
+<StackPane alignment="CENTER" minHeight="600.0" minWidth="900.0" style="-fx-grid-lines-visible: true;" styleClass="main-window" stylesheets="stylesheet.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+    <MediaView fx:id="mediaView" />
+    <GridPane fx:id="gridPane"
+            translateY="250" alignment="BASELINE_CENTER" maxHeight="100" minWidth="-Infinity" onMouseEntered="#fadeIn" onMouseExited="#fadeOut">
+        <children>
+            <Slider fx:id="slider" minWidth="750" translateY="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="1">
+                <padding>
+                    <Insets bottom="5" left="30" right="30" top="0" />
+                </padding>
+            </Slider>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="750.0" spacing="10">
+                <children>
+                    <!-- <Button fx:id="previousBtn">BB</Button> !-->
+                    <Button fx:id="loadBtn" onMouseClicked="#loadMedia">L</Button>
+                    <Button fx:id="rewindBtn">B</Button>
+                    <Button fx:id="pauseBtn" onMouseClicked="#pause">p</Button>
+                    <Button fx:id="playStopBtn" onMouseClicked="#playStop">P</Button>
+                    <Button fx:id="fastForward">FF</Button>
+                    <!-- <Button fx:id="newxtBtn">NX</Button> !-->
+                </children>
+            </HBox>
 
-   </children>
-</GridPane>
+        </children>
+        <rowConstraints>
+            <RowConstraints percentHeight="50" />
+            <RowConstraints percentHeight="50" />
+        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" />
+         </columnConstraints>
+    </GridPane>
+        <Label fx:id="loadFileTextLabel"
+                text="Load a media file to start watching!" textFill="white" StackPane.alignment="CENTER">
+
+        </Label>
+    </children>
+
+</StackPane>
