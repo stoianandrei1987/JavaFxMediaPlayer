@@ -29,7 +29,7 @@ public class Controller implements Initializable {
     private MediaPlayer player;
     private Media media;
     private String initialDir = "C:\\Users\\Andrei\\IdeaProjects\\JavaFxMediaPlayer\\src";
-    private String[] extensions = {"*.mp4", "*.mpeg", "*.mpg", "*.avi", "*.divx", "*.wmv"};
+    private String[] extensions = {"*.mp4", "*.mpeg", "*.mpg", "*.avi", "*.divx", "*.wmv", "*.mkv"};
     private boolean isPlaying = false;
     private static SimpleBooleanProperty rewindIsPressed = new SimpleBooleanProperty(false);
     private static SimpleBooleanProperty fastForwardIsPressed = new SimpleBooleanProperty(false);
@@ -125,12 +125,11 @@ public class Controller implements Initializable {
                 Double[] currentTime = new Double[1];
                 currentTime[0] = player.getCurrentTime().toMillis();
 
-                if(newValue == true) {
+                if (newValue == true) {
                     player.pause();
                     Thread t = new Thread(() -> {
-                       while(rewindIsPressed.get() == true) {
-                           if(currentTime[0] - fastForwardRewindSpeed >= 0)
-                            {
+                        while (rewindIsPressed.get() == true) {
+                            if (currentTime[0] - fastForwardRewindSpeed >= 0) {
                                 try {
                                     Thread.sleep(100);
                                 } catch (InterruptedException e) {
@@ -141,7 +140,7 @@ public class Controller implements Initializable {
                                 currentTime[0] -= fastForwardRewindSpeed;
 
                             }
-                       }
+                        }
                     });
                     t.start();
                 }
@@ -211,7 +210,6 @@ public class Controller implements Initializable {
         fi.setDuration(Duration.seconds(0.4));
         fi.play();
     }
-
 
     public void fadeOut(MouseEvent mouseEvent) {
         FadeTransition fo = new FadeTransition();
