@@ -24,6 +24,11 @@
                     <Button fx:id="pauseBtn" onMouseClicked="#pause">p</Button>
                     <Button fx:id="playStopBtn" onMouseClicked="#playStop">P</Button>
                     <Button fx:id="fastForward">FF</Button>
+                    <Slider fx:id="volumeSlider" minWidth="120">
+                        <padding>
+                            <Insets left="70"></Insets>
+                        </padding>
+                    </Slider>
                     <!-- <Button fx:id="newxtBtn">NX</Button> !-->
                 </children>
             </HBox>
@@ -41,6 +46,8 @@
                 text="Load a media file to start watching!" textFill="white" StackPane.alignment="CENTER">
 
         </Label>
+
+
     </children>
 
 </StackPane>

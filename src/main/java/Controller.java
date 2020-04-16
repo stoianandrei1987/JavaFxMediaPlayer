@@ -52,6 +52,8 @@ public class Controller implements Initializable {
     public GridPane gridPane;
     @FXML
     public Label loadFileTextLabel;
+    @FXML
+    public Slider volumeSlider;
 
 
     private void setSliderPosition() {
@@ -195,6 +197,9 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         gridPane.setOpacity(0);
         slider.setDisable(true);
+        volumeSlider.setValue(75);
+
+
     }
 
 
@@ -232,7 +237,7 @@ public class Controller implements Initializable {
                 player.dispose();
             media = new Media(f.toURI().toString());
             player = new MediaPlayer(media);
-            player.setVolume(0.75);
+            player.volumeProperty().bind(volumeSlider.valueProperty().divide(100));
             mediaView.setMediaPlayer(player);
             slider.setDisable(false);
             setHandlersAndListeners();
