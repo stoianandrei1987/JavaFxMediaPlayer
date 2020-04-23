@@ -29,7 +29,7 @@ public class Controller implements Initializable {
     private MediaPlayer player;
     private Media media;
     private String initialDir = "C:\\Users\\Andrei\\IdeaProjects\\JavaFxMediaPlayer\\src";
-    private String[] extensions = {"*.mp4", "*.mpeg", "*.mpg", "*.avi", "*.divx", "*.wmv", "*.mkv"};
+    private String[] extensions = {"*.mp4", "*.mpeg", "*.mpg", "*.avi", "*.divx", "*.wmv", "*.mkv", "*.mp3"};
     private boolean isPlaying = false;
     private static SimpleBooleanProperty rewindIsPressed = new SimpleBooleanProperty(false);
     private static SimpleBooleanProperty fastForwardIsPressed = new SimpleBooleanProperty(false);
